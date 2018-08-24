@@ -5,6 +5,11 @@ class Post1sController < ApplicationController
   # GET /post1s.json
   def index
     @post1s = Post1.all
+    
+    @username=""
+        unless session[:user_id].nil?
+        @username = Username.find(session[:user_id]).username
+        end
   end
 
   # GET /post1s/1
