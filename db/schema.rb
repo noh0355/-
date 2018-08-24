@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180823105653) do
+ActiveRecord::Schema.define(version: 20180824104708) do
 
   create_table "admits", force: :cascade do |t|
     t.string   "name"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20180823105653) do
   create_table "means", force: :cascade do |t|
     t.string   "username"
     t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post1s", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.string   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

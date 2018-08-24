@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :post1s
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root "first#woori"
@@ -35,6 +36,11 @@ Rails.application.routes.draw do
   get "/first/admit"=>"first#admit"
   get "/first/admi/:id"=>"first#admi"
   
+  get "/first/market"=>"first#market"
+  get "/first/market_at"=>"first#market_at"
+  
+  
+  get "/post1s"=>'post1s#'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
