@@ -1,31 +1,104 @@
-<p id="notice"><%= @username %></p>
-
-<h1>Listing Post1s</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @post1s.each do |post1| %>
-      <tr>
-        <td><%= post1.title %></td>
-        <td><%= post1.content %></td>
-        <td><%= image_tag post1.image.thumb.url %></td>
-        <td><%= link_to 'Show', post1 %></td>
-        <td><%= link_to 'Edit', edit_post1_path(post1) %></td>
-        <td><%= link_to 'Destroy', post1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post1', new_post1_path %>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+           .top{
+                width:100%;
+                height:60px;
+                margin-top:10px;
+                background-color:#2E64FE;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                z-index:1;
+            }
+            b{
+                width:30px;
+                height:10px;
+                margin-left:680px;
+                color:white;
+                font-size:20px;
+            }
+            c{
+                font-size:40px;
+                font-family:Times New Roman;
+                margin-left:20px;
+                color:white;
+            }
+             .mainpage{
+                width:100%
+                height:500px;
+                margin-left:30px;
+                margin-top:80px;
+                display: inline-block;
+            }
+             .main{
+                width:700px;
+                height:100px;
+                position: absolute;    
+                margin-top:30px;
+                margin-left:30px;
+                color:white;
+            }
+            table{
+              color:white;
+            }
+            e{
+              font-size:50px;
+              color:white;
+              text-decoration:none;
+            }
+             a{
+                text-decoration:none;
+                color:white;
+            }
+            a:hover{
+               text-decoration:none;
+               color:gray;
+            }
+    </style>
+  </head>
+  <body>
+     <div class="top">
+            <c>우리-WOORI</c>
+        
+            <b> <%= @username %>&emsp;&nbsp;<a href="/first/woori1">돌아가기</a>&emsp;&nbsp;<a href="/first/logout">로그아웃&emsp;&nbsp;</a><a href="/first/help">고객지원</a></b>
+     </div>
+      <div class="mainpage">
+          <div class="main">
+            <h1>개발자 페이지</h1>
+            <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">ID<br></th>
+                    <th scope="col">Title<br></th>
+                    <th scope="col">Content<br></th>
+                    <th scope="col">Image<br></th>
+                    <th scope="col">SHOW<br></th>
+                    <th scope="col">EDIT<br></th>
+                    <th scope="col">DESTROY<br></th>
+                    <th scope="col" colspan="3"><br></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @post1s.each do |post1| %>
+                    <tr>
+                      <th scope="row"><%= post1.id%></th>
+                      <td><%= post1.title %></td>
+                      <td><%= post1.content %></td>
+                      <td><%= image_tag post1.image.thumb.url %></td>
+                     <td><a><%= link_to 'Show', post1 %></a></td>
+                     <td><a><%= link_to 'Edit', edit_post1_path(post1) %></a></td>
+                     <td><a><%= link_to 'Destroy', post1, method: :delete, data: { confirm: 'Are you sure?' } %></a></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <br>
+             <e><a> <%= link_to 'New Post1', new_post1_path %></a></e>
+             
+            </div>
+         <img src="/first.jpg">
+         </div>
+</body>
+</html>

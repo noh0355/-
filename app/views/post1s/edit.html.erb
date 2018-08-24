@@ -1,6 +1,82 @@
-<h1>Editing Post1</h1>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+           .top{
+                width:100%;
+                height:60px;
+                margin-top:10px;
+                background-color:#2E64FE;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                z-index:1;
+            }
+            b{
+                width:30px;
+                height:10px;
+                margin-left:600px;
+                color:white;
+                font-size:20px;
+            }
+            c{
+                font-size:40px;
+                font-family:Times New Roman;
+                margin-left:20px;
+                color:white;
+            }
+             .mainpage{
+                width:100%
+                height:500px;
+                margin-left:30px;
+                margin-top:80px;
+                display: inline-block;
+            }
+             .main{
+                width:700px;
+                height:100px;
+                position: absolute;    
+                margin-top:30px;
+                margin-left:30px;
+                color:white;
+            }
+            table{
+              color:white;
+            }
+            e{
+              font-size:50px;
+              color:white;
+              text-decoration:none;
+            }
+            e{
+                font-size:20px;
+                color:white;}
+            a{
+                text-decoration:none;
+                color:white;
+            }
+            a:hover{
+               text-decoration:none;
+               color:gray;
+            }
+    </style>
+  </head>
+  <body>
+     <div class="top">
+            <c>우리-WOORI</c>
+            <b> <%= @username %>&emsp;&nbsp;<a href="/first/woori1">돌아가기</a>&emsp;&nbsp;<a href="/first/logout">로그아웃&emsp;&nbsp;</a><a href="/first/help">고객지원</a></b>
+     </div>
+      <div class="mainpage">
+          <div class="main">
+           <h1>Editing Post1</h1>
+            <e><a><%= render 'form' %></a></e>
+            <e><a><%= link_to 'Show', @post1 %></a> |
+            <a><%= link_to 'Back', post1s_path %></a></e>
+              <br>
+            </div>
+         <img src="/first.jpg">
+         </div>
+</body>
+</html>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @post1 %> |
-<%= link_to 'Back', post1s_path %>

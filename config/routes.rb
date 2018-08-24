@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root "first#woori"
- 
-  get "/first/join"=>"first#join"
+  
+   get "/first/join"=>"first#join"
   get "/first/join_process"=>"first#join_process"
   
   get "/first/login"=>"first#login"
@@ -39,8 +39,8 @@ Rails.application.routes.draw do
   get "/first/market"=>"first#market"
   get "/first/market_at"=>"first#market_at"
   
-  
-  get "/post1s"=>'post1s#'
+  get "/post1s"=>'post1s'
+  get "/post1s/neww"=>"post1s#neww"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

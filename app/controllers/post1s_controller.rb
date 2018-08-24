@@ -5,11 +5,11 @@ class Post1sController < ApplicationController
   # GET /post1s.json
   def index
     @post1s = Post1.all
-    
     @username=""
-        unless session[:user_id].nil?
-        @username = Username.find(session[:user_id]).username
-        end
+    
+       unless session[:user_id].nil?
+      @username = Username.find(session[:user_id]).username
+      end
   end
 
   # GET /post1s/1
@@ -20,6 +20,18 @@ class Post1sController < ApplicationController
   # GET /post1s/new
   def new
     @post1 = Post1.new
+  end
+  
+  def neww
+       a = Admitwait.new
+       a.name = @post1.name
+       a.image = @post1.image
+       a.title = @post1.title
+       a.content = @post1.content
+       a.file = @post1.file
+       a.save
+       
+       redirect_to '/post1s'
   end
 
   # GET /post1s/1/edit
@@ -69,7 +81,6 @@ class Post1sController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post1
-      @post1 = Post1.find params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

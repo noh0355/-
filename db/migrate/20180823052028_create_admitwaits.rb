@@ -4,7 +4,9 @@ class CreateAdmitwaits < ActiveRecord::Migration
       
       t.string:name
       t.string:title
-      t.string:divide
+      t.string:content
+      t.string:image
+      t.string:file
 
       t.timestamps null: false
     end
