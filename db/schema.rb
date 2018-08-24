@@ -23,16 +23,6 @@ ActiveRecord::Schema.define(version: 20180824104708) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "admitwaits", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title"
-    t.string   "content"
-    t.string   "image"
-    t.string   "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"

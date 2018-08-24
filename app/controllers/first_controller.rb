@@ -101,18 +101,30 @@ class FirstController < ApplicationController
         redirect_to "/first/admit"
     end
     def admit
-        @admiall = Admitwait.all
+        @admiall = Post1.all
         @admi = Admit.all
     end
     def admi
-        two = Admitwait.find params[:id]
+        two = Post1.find params[:id]
         one = Admit.new
         one.name = two.name
         one.title = two.title
-        one.divide = two.divide
+        one.content = two.content
         one.save
         two.delete
         
         redirect_to "/first/admit"
+    end
+    def market
+        @aaa = Post1.all
+        
+        @username=""
+        unless session[:user_id].nil?
+        @username = Username.find(session[:user_id]).username
+        end
+        @use =  Username.find(session[:user_id])
+    end
+    def market_at
+        @aa = Post1.find params[:id]
     end
 end

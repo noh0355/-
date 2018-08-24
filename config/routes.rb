@@ -37,10 +37,8 @@ Rails.application.routes.draw do
   get "/first/admi/:id"=>"first#admi"
   
   get "/first/market"=>"first#market"
-  get "/first/market_at"=>"first#market_at"
+  get "/first/market_at/:id"=>"first#market_at"
   
-  get "/post1s"=>'post1s'
-  get "/post1s/neww"=>"post1s#neww"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

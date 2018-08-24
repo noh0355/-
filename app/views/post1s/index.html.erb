@@ -56,6 +56,9 @@
                text-decoration:none;
                color:gray;
             }
+             .image{
+              position:absolute;
+            }
     </style>
   </head>
   <body>
@@ -67,10 +70,12 @@
       <div class="mainpage">
           <div class="main">
             <h1>개발자 페이지</h1>
+            <div style="width:100%; height:300px; overflow:auto">
             <table class="table table-dark">
                 <thead>
                   <tr>
                     <th scope="col">ID<br></th>
+                    <th scope="col">name<br></th>
                     <th scope="col">Title<br></th>
                     <th scope="col">Content<br></th>
                     <th scope="col">Image<br></th>
@@ -84,6 +89,7 @@
                   <% @post1s.each do |post1| %>
                     <tr>
                       <th scope="row"><%= post1.id%></th>
+                      <td><%= post1.name %></td>
                       <td><%= post1.title %></td>
                       <td><%= post1.content %></td>
                       <td><%= image_tag post1.image.thumb.url %></td>
@@ -93,8 +99,7 @@
                     </tr>
                   <% end %>
                 </tbody>
-              </table>
-              <br>
+              </table></div>
              <e><a> <%= link_to 'New Post1', new_post1_path %></a></e>
              
             </div>
