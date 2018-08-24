@@ -1,6 +1,40 @@
 Rails.application.routes.draw do
+
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   root "first#woori"
-  get "first/login"=>"first#login"
+ 
+  get "/first/join"=>"first#join"
+  get "/first/join_process"=>"first#join_process"
+  
+  get "/first/login"=>"first#login"
+  get "/first/login_process"=>"first#login_process"
+ 
+  get "/first/logout"=>"first#logout"
+ 
+  get "/homes/index"=>"homes#index"
+  get "/first/woori1"=>"first#woori1"
+  get "/first/woori11"=>"first#woori11"
+  
+  get "/first/update/:id"=>"first#update"
+  get "/first/edit/:id"=>"first#edit"
+  
+  get "/first/destroy/:id"=>"first#destroy"
+  get "/first/destro/:id"=>"first#destro"
+  get "/first/destr/:id"=>"first#destr"
+  get "/first/dest/:id"=>"first#dest"
+  
+  get "/first/help"=>"first#help"
+  get "/first/help_process"=>"first#help_process"
+  
+  get "/first/meaning"=>"first#meaning"
+  get "/first/posupdate"=>"first#posupdate"
+  
+  get "/first/index"=>"first#index"
+  
+  get "/first/admit"=>"first#admit"
+  get "/first/admi/:id"=>"first#admi"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

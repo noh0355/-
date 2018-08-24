@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .top{
+                width:100%;
+                height:60px;
+                margin-top:10px;
+                background-color:#2E64FE;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                z-index:2;
+            }
+             b{
+                width:30px;
+                height:10px;
+                margin-left:750px;
+                color:white;
+                font-size:20px;
+            }
+            c{
+                font-size:40px;
+                font-family:Times New Roman;
+                margin-left:20px;
+                color:white;
+            }
+            .mainpage{
+                width:100%
+                height:500px;
+                margin-left:30px;
+                margin-top:80px;
+                display: inline-block;
+            }
+            .main{
+                width:700px;
+                height:100px;
+                position: absolute;    
+                margin-top:40px;
+                text-align:center;
+                margin-left:20px;
+            }
+            d{
+                font-size:25px;
+                color:white;
+            }
+            .botn{
+                margin-left:1100px;
+                margin-top:550px;
+                width:70px;
+                height:50px;
+                position: absolute;
+            }
+            .btn{
+                margin:20px;
+            }
+            f{
+                font-size:15px;
+            }
+            a{
+                text-decoration:none;
+                color:white;
+            }
+            a:hover{
+               text-decoration:none;
+               color:gray;
+            }
+            .table{
+                width:500px;
+                margin-left:30px;
+                color:white;
+            }
+            h1{
+                color:white;
+               margin-right:400px;
+            }
+            .seee{
+                background-color:white;
+                width:700px;
+                height:500px;
+                margin-left:570px;
+                margin-top:50px;
+                position:absolute;
+            }
+            #see{
+                position:relative; z-index:1; visibility:hidden;
+            }
+        </style>
+    </head>
+    <body>
+         <div class="top">
+            <c>우리-WOORI</c>
+            <b>개발자 승인 페이지 &ensp;&ensp;<a href="/first/help">고객지원</a></b>
+        </div>
+         <div class="mainpage">
+         <div class="main">
+             <h1>승인대기</h1>
+             <div style="width:100%; height:200px; overflow:auto">
+            <table class="table table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">순서</th>
+                  <th scope="col">개발자(켜기)</th>
+                  <th scope="col">제목(끄기)</th>
+                  <th scope="col">범주</th>
+                  <th scope="col">승인</th>
+                </tr>
+              </thead>
+              <% @admiall.each do |w| %>
+              <tbody>
+                    <td><%=w.id%></td>
+                    <td><input type="button" OnClick="see.style.visibility='visible'" value="<%=w.name%>"></td>
+                    <td><input type="button" OnClick="see.style.visibility='hidden'" value="<%=w.title%>"></td>
+                    <td><%=w.divide%></td>
+                    <td><a href="/first/admi/<%=w.id%>">승인</a></td>
+              </tbody>
+               <%end%>
+            </table></div><br><br><br>
+            <h1>승인완료</h1>
+              <div style="width:100%; height:200px; overflow:auto">
+               <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">순서</th>
+                      <th scope="col">개발자</th>
+                      <th scope="col">제목</th>
+                      <th scope="col">범부</th>
+                      <th scope="col">삭제</th>
+                    </tr>
+                  </thead>
+                   <% @admi.each do |w| %>
+              <tbody>
+                    <td><%=w.id%></td>
+                    <td><%=w.name%></td>
+                    <td><%=w.title%></td>
+                    <td><%=w.divide%></td>
+                    <td><a href="/first/dest/<%=w.id%>">삭제</a></td>
+              </tbody>
+               <%end%>
+                </table></div>
+         </div>
+         <div id="see"><div class= "seee" style="overflow:scroll;">이미지를 불러오기</div></div>
+         <div class="botn">
+             <button type="button" class="btn btn-success"><a href="/first/meaning"><f>&ensp;&ensp;돌아가기&ensp;&ensp;</f></a></button>
+             </div>
+         <img src="/first.jpg">
+         </div>
+    </body>
+</html>

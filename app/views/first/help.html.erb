@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .top{
+                width:100%;
+                height:60px;
+                margin-top:10px;
+                background-color:#2E64FE;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                z-index:1;
+            }
+             b{
+                width:30px;
+                height:10px;
+                margin-left:900px;
+                color:white;
+                font-size:20px;
+            }
+            c{
+                font-size:40px;
+                font-family:Times New Roman;
+                margin-left:20px;
+                color:white;
+            }
+            .mainpage{
+                width:100%
+                height:500px;
+                margin-left:30px;
+                margin-top:80px;
+                display: inline-block;
+            }
+            .main{
+                width:700px;
+                height:100px;
+                position: absolute;    
+                margin-top:120px;
+                text-align:center;
+                margin-left:40px;
+            }
+            d{
+                font-size:25px;
+                color:white;
+            }
+            .botn{
+                margin-left:900px;
+                margin-top:300px;
+                width:40px;
+                height:50px;
+                position: absolute;
+              
+            }
+            f{
+                font-size:30px;
+            }
+            a{
+                text-decoration:none;
+                color:white;
+            }
+            a:hover{
+               text-decoration:none;
+               color:gray;
+            }
+            .table{
+                margin-left:50px;
+                color:white;
+            }
+            .form-control{
+                margin-left:50px;
+            }
+        </style>
+    </head>
+    <body>
+         <div class="top">
+            <c>우리-WOORI</c>
+            <b><a href="/first/join">회원가입 &emsp;&nbsp;</a></b>
+        </div>
+         <div class="mainpage">
+         <div class="main"><d>주소&ensp;:&ensp;경상남도 진주시 경상대학교&ensp;(우편주소:52828)<br>전화번호&ensp;:&ensp;055-123-4567<br><br></d>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">F&Q</th>
+      <th scope="col">순서</th>
+      <th scope="col">질문</th>
+      <th scope="col">작성자</th>
+      <th scope="col">답변</th>
+    </tr>
+  </thead>
+   <% @all.each do |w| %>
+  <tbody>
+    <tr>
+        <td></td>
+        <td><%=w.id%> </td>
+        <td><%=w.quest%> </td>
+        <td><%=w.write%> </td>
+        <td><%=w.respond%> </td>
+    </tr>
+  </tbody>
+  <%end%>
+</table>
+        </div>
+         <div class="botn">
+             <button type="button" class="btn btn-success"><a href="/"><f>&ensp;&ensp;돌아가기&ensp;&ensp;</f></a></button>
+             </div>
+         <img src="/first.jpg">
+         </div>
+        
+    </body>
+</html>

@@ -2,46 +2,71 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <style>
-        form{
+        .form1{
+          width:95%;
+          height:700px;
+        }
+        img{
+          width:95%;
+          height:700px;
+          margin-left:70px;
+          display: inline-block;
+        }
+        
+        .form{
             width:50%;
-            height:400px;
             margin-left:350px;
-            margin-top:100px;
-            background-color:gray;
+            position: absolute;  
         }
             .logi{
                 text-align:center;
-                font-size:30px;
-                color:white;
+                font-size:50px;
+                color:#F4D03F  ;
+                margin-bottom:40px;
+                height:200px;
             }
             .form-group{
                 text-align:center;
             }
             .btn{
-                margin-left:40px;
+                margin-left:30px;
             }
             .form-control{
-                width:300px;
-                margin-left:190px;
-                margin-bottom:30px;
+                width:500px;
+                margin-left:90px;
+                margin-bottom:20px;
+            }
+            a{
+                text-decoration:none;
+                color:white;
+            }
+            a:hover{
+               text-decoration:none;
+               color:gray;
+            }
+            .log{
+                margin-left:50px;
             }
         </style>
     </head>
     <body>
-        <form>
+        <div class="form1">
+    
             <div class="form">
             <div class="logi"><br><br><strong>우리-WOORI</strong></div>
+   <form action="/first/login_process">
   <div class="form-group">
     <label for="exampleInputEmail1"></label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ID" name="username">
   </div>
   <div class="form-group">
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="비밀번호">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="비밀번호" name="password">
   </div>
-  <button type="button" class="btn btn-success">NAVER 간편 로그인</button>
-  <button type="button" class="btn btn-primary">Facebook 간편 로그인</button>
-  <button type="button" class="btn btn-danger">Google 간편 로그인</button>
-</form>
-</div>
+   <div class="log">
+  <button type="submit" class="btn btn-primary">&emsp;&emsp;로그인&emsp;&emsp;</button></form>
+  <button type="button" class="btn btn-success"><a href="/homes/index">Naver 간편 로그인</a></button>
+  <button type="button" class="btn btn-info"><a href="/first/join">&emsp;&emsp;회원가입&emsp;&emsp;</a></button></div>
+</div> <img src="/login.jpg"></div>
+<div>
     </body>
 </html>
